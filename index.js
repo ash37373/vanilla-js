@@ -59,3 +59,29 @@
 
 
 // #2-6 DOM If else Function practice 할 차례임.
+
+
+
+//0602
+//타이틀 클릭할때마다 이벤트발생으로 색변경하기
+//구글에 "javascript dom event mdn" -> 이벤트의 근원
+const title = document.querySelector("#title");
+
+const BASE_COLOR = "rgb(52, 73, 94)";
+const OTHER_COLOR = "#7f8c8d";
+function handleClick(){
+    // console.log(title.style.color);
+    const currentColor = title.style.color;
+    if(currentColor === BASE_COLOR){
+        title.style.color = OTHER_COLOR;
+    }else{
+        title.style.color = BASE_COLOR;
+    }
+}
+
+function init(){
+    title.style.color = BASE_COLOR;
+}
+title.addEventListener("click", handleClick); //click 대신 mouseenter 누르면 마우스 갖다대면 바뀜
+init();
+
